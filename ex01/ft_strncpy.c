@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: choolau <choolau@student.42.fr>            +#+  +:+       +#+        */
+/*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 17:39:32 by choolau           #+#    #+#             */
-/*   Updated: 2026/07/04 18:21:00 by choolau          ###   ########.fr       */
+/*   Updated: 2026/07/04 22:46:27 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
+	if (n <= 0) {
+		return dest;
+	}
+	
 	char	*current_src_ptr;
 	char	*current_dest_ptr;
 
@@ -31,6 +35,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	while (n > 0)
 	{
 		*current_dest_ptr = '\0';
+		current_dest_ptr++;
 		n--;
 	}
 	return (dest);
