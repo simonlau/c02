@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 09:48:10 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/05 10:40:42 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/05 10:54:32 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void	test_invalid(void)
 	char	*s;
 	int		result;
 
-	s = "!\"#$%&'()*+,-./0123456789\n:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+	// man ascii
+	// printf "%o" 127
+	s = "a\177b\nc";
 	result = ft_str_is_printable(s);
 	assert(0 == result);
 }
