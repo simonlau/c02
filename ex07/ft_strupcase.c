@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 16:16:13 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/05 16:16:14 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/05 16:41:17 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int	ft_str_is_lowercase(char *str)
 
 char	*ft_strupcase(char *str)
 {
-	int	DIFF;
+	int	diff;
 
-	DIFF = 'a' - 'A';
+	diff = 'a' - 'A';
 	while (*str != '\0')
 	{
 		if (ft_str_is_lowercase(str))
 		{
-			*str += DIFF;
+			*str += diff;
 		}
 		str++;
 	}
