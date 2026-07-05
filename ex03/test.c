@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 09:36:19 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/05 09:44:11 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/05 10:12:15 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_str_is_numeric(char *str);
 
-void	test_only_digits(void)
+void	test_only_lowercase(void)
 {
 	char	*s;
 	int		result;
@@ -46,7 +46,7 @@ void	test_empty(void)
 
 int	main(void)
 {
-	test_only_digits();
+	test_only_lowercase();
 	test_invalid();
 	test_empty();
 }
