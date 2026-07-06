@@ -6,11 +6,12 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 17:39:58 by choolau           #+#    #+#             */
-/*   Updated: 2026/07/04 22:52:06 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/06 10:52:55 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <assert.h>
+#include <stdio.h>
 #include <string.h>
 
 char	*ft_strncpy(char *dest, const char *src, unsigned int n);
@@ -25,17 +26,18 @@ void	test_n_zero(void)
 	result = ft_strncpy(b, a, 0);
 	assert(result == b);
 	for (int i = 0; i < 10; i++)
+	{
 		assert(b[i] == 'X');
+	}
 }
-
 
 void	test_n_smaller(void)
 {
 	char	a[] = "simon";
 	char	b[10];
 	char	*result;
-	char	expected[] = "si";
 	int		small;
+	char	expected[] = "si";
 
 	small = 2;
 	result = ft_strncpy(b, a, small);
