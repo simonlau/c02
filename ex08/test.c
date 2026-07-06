@@ -24,6 +24,17 @@ void	test_empty(void)
 	assert(strlen(result) == 0);
 }
 
+void	test_mixed(void)
+{
+	char	input[] = "AAaaAA";
+	char	*expected;
+	char	*result;
+
+	expected = "aaaaaa";
+	result = ft_strlowcase(input);
+	assert(strcmp(result, expected) == 0);
+}
+
 void	test_all_upper(void)
 {
 	char	input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -52,5 +63,6 @@ int	main(void)
 	test_empty();
 	test_all_upper();
 	test_nonalpha();
+	test_mixed();
 	return (0);
 }

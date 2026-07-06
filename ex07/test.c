@@ -35,6 +35,17 @@ void	test_all_upper(void)
 	assert(strcmp(result, upper) == 0);
 }
 
+void	test_mixed(void)
+{
+	char	input[] = "AAaaAA";
+	char	*expected;
+	char	*result;
+
+	expected = "AAAAAA";
+	result = ft_strupcase(input);
+	assert(strcmp(result, expected) == 0);
+}
+
 void	test_nonalpha(void)
 {
 	char	input[] = "-?*";
@@ -52,5 +63,6 @@ int	main(void)
 	test_all_lower();
 	test_all_upper();
 	test_nonalpha();
+	test_mixed();
 	return (0);
 }

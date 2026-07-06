@@ -3,25 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
+/*   By: choolau <choolau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 16:16:13 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/06 14:26:43 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/06 17:57:37 by choolau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_lowercase(char *str)
+int	is_lowercase(char letter)
 {
-	char	*letter_ptr;
-
-	letter_ptr = str;
-	while (*letter_ptr != '\0')
+	if (letter < 'a' || letter > 'z')
 	{
-		if (*letter_ptr < 'a' || *letter_ptr > 'z')
-		{
-			return (0);
-		}
-		letter_ptr++;
+		return (0);
 	}
 	return (1);
 }
@@ -35,7 +28,7 @@ char	*ft_strupcase(char *str)
 	diff = 'a' - 'A';
 	while (*letter_ptr != '\0')
 	{
-		if (ft_str_is_lowercase(letter_ptr))
+		if (is_lowercase(*letter_ptr))
 		{
 			*letter_ptr -= diff;
 		}
