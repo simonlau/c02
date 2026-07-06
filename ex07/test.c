@@ -12,7 +12,7 @@ void	test_all_lower(void)
 
 	upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	result = ft_strupcase(lower);
-	assert(strcasecmp(result, upper));
+	assert(strcmp(result, upper) == 0);
 }
 
 void	test_empty(void)
@@ -21,7 +21,6 @@ void	test_empty(void)
 	char	*result;
 
 	result = ft_strupcase(empty);
-	printf("%s", result);
 	assert(strlen(result) == 0);
 }
 
@@ -33,7 +32,7 @@ void	test_all_upper(void)
 
 	upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	result = ft_strupcase(input);
-	assert(strcasecmp(result, upper));
+	assert(strcmp(result, upper) == 0);
 }
 
 void	test_nonalpha(void)
@@ -44,13 +43,13 @@ void	test_nonalpha(void)
 
 	expected = "-?*";
 	result = ft_strupcase(input);
-	assert(strcasecmp(result, expected));
+	assert(strcmp(result, expected) == 0);
 }
 
 int	main(void)
 {
-	test_all_lower();
 	test_empty();
+	test_all_lower();
 	test_all_upper();
 	test_nonalpha();
 	return (0);
