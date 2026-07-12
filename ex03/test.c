@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/05 09:36:19 by simon.lau         #+#    #+#             */
-/*   Updated: 2026/07/05 10:12:15 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/12 15:47:28 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,29 @@
 
 int		ft_str_is_numeric(char *str);
 
-void	test_only_lowercase(void)
+void	test_valid(void)
 {
-	char	*s;
-	int		result;
-
-	s = "0123456789";
-	result = ft_str_is_numeric(s);
-	assert(1 == result);
+	assert(1 == ft_str_is_numeric("0123456789"));
+	assert(1 == ft_str_is_numeric("0"));
+	assert(1 == ft_str_is_numeric("9"));
 }
 
 void	test_invalid(void)
 {
-	char	*s;
-	int		result;
-
-	s = "012345 6789";
-	result = ft_str_is_numeric(s);
-	assert(0 == result);
+	assert(0 == ft_str_is_numeric("012345-6789"));
+	assert(0 == ft_str_is_numeric("-0123456789"));
+	assert(0 == ft_str_is_numeric("0123456789-"));
+	assert(0 == ft_str_is_numeric("01*345?67(9"));
 }
 
 void	test_empty(void)
 {
-	char	*s;
-	int		result;
-
-	s = "";
-	result = ft_str_is_numeric(s);
-	assert(1 == result);
+	assert(1 == ft_str_is_numeric(""));
 }
 
 int	main(void)
 {
-	test_only_lowercase();
+	test_valid();
 	test_invalid();
 	test_empty();
 }
