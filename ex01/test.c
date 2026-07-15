@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 17:39:58 by choolau           #+#    #+#             */
-/*   Updated: 2026/07/12 15:35:17 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/16 00:54:38 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	test_n_large(void)
 	int		MAX;
 
 	a = "simon";
-	size = sizeof(a);
+	size = strlen(a);
 	MAX = 10;
 	for (int i = 0; i < MAX; i++)
 	{
