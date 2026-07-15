@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: choolau <choolau@student.42.fr>            +#+  +:+       +#+        */
+/*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 17:22:49 by choolau           #+#    #+#             */
-/*   Updated: 2026/07/06 20:42:00 by choolau          ###   ########.fr       */
+/*   Updated: 2026/07/16 00:46:49 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,42 @@
 
 char	*ft_strcpy(char *dest, char *src);
 
-int	main(void)
+void	test_normal(void)
 {
 	char	dest[] = "simon";
-	char	src[] = "12345";
+	char	*src;
 	char	*result;
-	char	*expected;
 
-	expected = "12345";
+	src = "12345";
 	result = ft_strcpy(dest, src);
-	assert(strcmp(result, expected) == 0);
+	assert(strcmp(result, "12345") == 0);
+}
+
+void	test_src_empty(void)
+{
+	char	dest[] = "simon";
+	char	*src;
+	char	*result;
+
+	src = "";
+	result = ft_strcpy(dest, src);
+	assert(strcmp(result, "") == 0);
+}
+
+void	test_dest_empty(void)
+{
+	char	dest[10] = "";
+	char	*src;
+	char	*result;
+
+	src = "simon";
+	result = ft_strcpy(dest, src);
+	assert(strcmp(result, "simon") == 0);
+}
+
+int	main(void)
+{
+	test_normal();
+	test_src_empty();
+	test_dest_empty();
 }
