@@ -6,7 +6,7 @@
 /*   By: simon.lau <simon.lau@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/04 17:39:58 by choolau           #+#    #+#             */
-/*   Updated: 2026/07/16 00:54:38 by simon.lau        ###   ########.fr       */
+/*   Updated: 2026/07/16 14:14:12 by simon.lau        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,19 @@ void	test_n_equal_strlen(void)
 	char	b[10];
 	char	*result;
 	char	expected[] = "simon";
+	int		len;
 
-	result = ft_strncpy(b, a, strlen(a));
+	memset(b, 'X', 10);
+	len = strlen(a);
+	result = ft_strncpy(b, a, len);
 	assert(result == b);
-	for (int i = 0; i < (int)strlen(a); i++)
+	for (int i = 0; i < len; i++)
 	{
 		assert(result[i] == expected[i]);
+	}
+	for (int i = len; i < 10; i++)
+	{
+		assert(result[i] == 'X');
 	}
 }
 
@@ -85,7 +92,7 @@ void	test_n_large(void)
 	{
 		assert(result[i] == expected[i]);
 	}
-	for (int i = size + 1; i < MAX; i++)
+	for (int i = size; i < MAX; i++)
 	{
 		assert(result[i] == '\0');
 	}
